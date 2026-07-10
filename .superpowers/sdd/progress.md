@@ -15,3 +15,9 @@ Deviations from plan:
 - TypeScript pinned to ^5.9.3 (not unversioned): Next 16 build type-check
   rejects the TS 7 native-preview compiler that 'typescript@latest' resolves to.
 - tsconfig.json auto-adjusted by Next (jsx -> react-jsx, added .next/dev/types include).
+
+## Final review (opus, whole-branch)
+- Independent reviewer ran tests/typecheck/build (all pass) + drove live endpoint via official MCP SDK client (65 real AZ standards, sorted, attributed).
+- 1 blocker fixed (type enum too strict -> string), 3 minor fixes applied (document surfaced, mcp-handler exact pin, description wording).
+- Not done (accepted): no automated test for the thin route glue — covered by end-to-end verification instead.
+- Verdict after fixes: SHIP. 25/25 tests, typecheck clean, build clean.
