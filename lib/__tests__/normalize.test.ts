@@ -74,6 +74,12 @@ describe("normalizeStandardSet", () => {
     const { license, ...rest } = rawSet;
     expect(normalizeStandardSet(rest as RawStandardSet).license).toBeNull();
   });
+  it("surfaces the document metadata (with null-safe sourceURL)", () => {
+    const doc = normalizeStandardSet(rawSet).document;
+    expect(doc?.publicationStatus).toBe("Published");
+    expect(doc?.valid).toBe("2016");
+    expect(doc?.sourceURL).toBeNull();
+  });
 });
 
 describe("findStandard", () => {

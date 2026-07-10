@@ -68,5 +68,6 @@ export interface NormalizedStandardSet {
   educationLevels: string[];
   jurisdiction: { id: string; title: string };
   license: { title: string; URL: string; rightsHolder: string } | null;
+  document: RawDocument | null; // source document metadata (sourceURL, publicationStatus, valid year)
   standards: RawStandard[]; // sorted by position
 }

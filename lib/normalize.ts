@@ -53,6 +53,7 @@ export function normalizeStandardSet(raw: RawStandardSet): NormalizedStandardSet
     license: hasLicense
       ? { title: lic!.title ?? "", URL: lic!.URL ?? "", rightsHolder: lic!.rightsHolder ?? "" }
       : null,
+    document: raw.document ?? null,
     standards,
   };
 }

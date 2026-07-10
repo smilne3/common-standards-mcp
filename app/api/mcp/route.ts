@@ -21,9 +21,12 @@ const handler = createMcpHandler(
   (server) => {
     server.tool(
       "list_jurisdictions",
-      "List U.S. academic-standards jurisdictions (states, organizations like Common Core/NGSS, districts, schools). Optionally filter by type or a title substring. Start here to find a jurisdiction id.",
+      "List U.S. and international academic-standards jurisdictions (states, organizations like Common Core/NGSS, schools, countries). Optionally filter by type or a title substring. Start here to find a jurisdiction id.",
       {
-        type: z.enum(["state", "organization", "school"]).optional(),
+        type: z
+          .string()
+          .optional()
+          .describe("Filter by jurisdiction type, e.g. 'state', 'organization', 'school', 'country', 'corporation', 'nation'"),
         title_contains: z.string().optional().describe("Case-insensitive substring of the jurisdiction title, e.g. 'Arizona'"),
       },
       async (args) => {
