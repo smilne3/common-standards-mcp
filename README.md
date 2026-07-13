@@ -46,12 +46,12 @@ _Tip: once deployed, add a screenshot or GIF of Claude answering a standards que
 
 ## Deploy
 
-Deploy to Vercel. The MCP endpoint is `https://<your-project>.vercel.app/api/mcp`.
+Deployed on Vercel. The live MCP endpoint is `https://common-standards-project.vercel.app/api/mcp`.
 
 Add it to Claude Code:
 
 ```bash
-claude mcp add --transport http common-standards https://<your-project>.vercel.app/api/mcp
+claude mcp add --transport http common-standards https://common-standards-project.vercel.app/api/mcp
 ```
 
 ## Configuration
