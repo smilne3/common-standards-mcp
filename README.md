@@ -28,9 +28,13 @@ Inspect it with `npx @modelcontextprotocol/inspector` → Streamable HTTP → `h
 
 Ask an assistant connected to this server:
 
-> “List Arizona’s math standard sets, then show the standards in the Grade 4 set.”
+> “Look up Arizona’s 4th-grade math standards, and list a few with their codes.”
 
-It chains `list_jurisdictions` → `list_standard_sets` (Arizona) → `get_standard_set`, and answers with the real standards — each carrying its CC-BY attribution. For example, `list_jurisdictions` filtered to “Arizona” returns:
+Claude calls the tools (`list_jurisdictions` → `list_standard_sets` → `get_standard_set`) and answers with the real standards — each carrying its CC-BY attribution:
+
+![Claude using the Common Standards MCP to list Arizona’s 4th-grade math standards](docs/demo.png)
+
+Under the hood, `list_jurisdictions` filtered to “Arizona” returns:
 
 ```json
 {
@@ -41,8 +45,6 @@ It chains `list_jurisdictions` → `list_standard_sets` (Arizona) → `get_stand
   ]
 }
 ```
-
-_Tip: once deployed, add a screenshot or GIF of Claude answering a standards question here._
 
 ## Deploy
 
